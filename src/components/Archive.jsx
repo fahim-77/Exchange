@@ -6,7 +6,7 @@ import CoinFooter from "./CoinFooter";
 import Trending from "./Trending";
 
 export default function Archive() {
-  const [coinList, setCoinList] = useState([]);
+  const [fetchCoin, setFetchCoin] = useState([]);
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(8);
 
@@ -15,7 +15,7 @@ export default function Archive() {
       const data = await fetchData(
         `coins/markets?vs_currency=usd&per_page=${perPage}&page=${page}`
       );
-      setCoinList(data);
+      setFetchCoin(data);
     };
     fetchCoins();
   }, [page, perPage]);
@@ -33,13 +33,13 @@ export default function Archive() {
             <div>Rating</div>
             <div>Networks</div>
           </div>
-          {coinList.length > 0 &&
-            coinList.map((coin, index) => (
+          {fetchCoin.length > 0 &&
+            fetchCoin.map((coin, index) => (
               <CoinList
                 key={coin.id}
                 coin={coin}
                 index={index}
-                coinList={coinList}
+                fetchCoin={fetchCoin}
                 page={page}
                 perPage={perPage}
               />

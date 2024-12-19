@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { ImGift } from "react-icons/im";
 
-export default function CoinList({ coin, index, coinList, page, perPage }) {
+export default function CoinList({ coin, index, fetchCoin, page, perPage }) {
   return (
     <div className="grid grid-cols-5 gap-y-3 border-b-2 border-[#1D2025] items-center px-2 py-[5px] text-xs font-semibold">
       <div>{index + (page - 1) * perPage + 1}</div>
@@ -21,8 +21,8 @@ export default function CoinList({ coin, index, coinList, page, perPage }) {
         <div>{(Math.random() * (5 - 3) + 3).toFixed(1)}</div>
       </div>
       <div className="flex items-center -space-x-2">
-        {coinList.length > 0 &&
-          coinList.map((item, index) =>
+        {fetchCoin.length > 0 &&
+          fetchCoin.map((item, index) =>
             index < 3 ? (
               <img
                 key={item.id}
@@ -30,7 +30,7 @@ export default function CoinList({ coin, index, coinList, page, perPage }) {
                 className="size-7 rounded-full bg-[#1D2025]"
               />
             ) : (
-              index === coinList.length - 1 && (
+              index === fetchCoin.length - 1 && (
                 <div
                   key={item.id}
                   className="size-[26px] rounded-full flex justify-center items-center bg-[#1D2025] text-white"
