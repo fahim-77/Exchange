@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchData } from "../Utils/httpRequest";
+import { FaAngleDown } from "react-icons/fa";
 import CoinHeader from "./CoinHeader";
 import CoinList from "./CoinList";
 import CoinFooter from "./CoinFooter";
@@ -27,7 +28,10 @@ export default function Archive() {
         <CoinHeader />
         <div className="flex flex-col  font-semibold text-sm ">
           <div className="grid grid-cols-5 border-b-2 border-[#1D2025] px-2 py-1 ">
-            <div>Rank</div>
+            <div className="flex items-center gap-2">
+              Rank
+              <FaAngleDown className="text-[#cecfd4]" />
+            </div>
             <div>Name</div>
             <div>Category</div>
             <div>Rating</div>

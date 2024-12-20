@@ -19,11 +19,11 @@ export default function Headers() {
         </div>
       </div>
       <div className="flex gap-2 items-center">
-        <div className="bg-[#1D2025] flex items-center gap-1 py-1 px-2 rounded-full  w-56">
-          <FiSearch className="text-white" />
+        <div className="bg-[#1D2025] flex items-center gap-2 py-1 px-2 rounded-full  w-56">
+          <FiSearch className="text-white text-lg" />
           <input
             type="text"
-            className="bg-inherit placeholder:text-[#9E9E9E] text-sm font-semibold outline-none"
+            className="bg-inherit pb-[1px] placeholder:text-[#9E9E9E] text-sm font-semibold outline-none"
             placeholder="Search for an assets..."
           />
         </div>

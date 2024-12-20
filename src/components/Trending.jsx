@@ -16,7 +16,7 @@ export default function Trending() {
   return (
     <div className="bg-[#111111] max-w-screen m-4 px-4 pt-4 flex flex-col gap-3 rounded-md">
       <div className="flex justify-between items-center">
-        <p className="text-[#E0E0E0] text-sm font-semibold">New and Trending</p>
+        <p className="text-[#b3b6bd] font-bold">New and Trending</p>
         <div className="flex text-[#E0E0E0] gap-2">
           <div className="flex justify-center items-center bg-[#1D2025] p-2 rounded-full text-xs">
             <FaAngleLeft />
