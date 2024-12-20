@@ -13,9 +13,9 @@ export default function Headers() {
           return <Component key={link.id} />;
         })} */}
         <div className="flex gap-6 items-center text-[#9E9E9E] font-bold text-sm">
-          {links.map((item) => {
-            return <div key={item.id}>{item.name}</div>;
-          })}
+          {links.map((item) => (
+            <div key={item.id}>{item.name}</div>
+          ))}
         </div>
       </div>
       <div className="flex gap-2 items-center">
@@ -27,7 +27,7 @@ export default function Headers() {
             placeholder="Search for an assets..."
           />
         </div>
-        <button className="bg-blue-700 rounded-full px-2 py-2 text-[#BDBDBD] text-sm font-bold ">
+        <button className="bg-[#2d2bf1] rounded-full px-3 py-2 text-[#BDBDBD] text-sm font-bold ">
           Buy & Sell
         </button>
         <button className="bg-[#1D2025] text-[#BDBDBD] text-xs font-bold px-3 py-2 rounded-full ">
