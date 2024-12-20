@@ -8,10 +8,10 @@ export default function CoinHeader() {
       <div className="flex items-center gap-6">
         <p className="font-semibold">Popular dapps</p>
         <div className="bg-[#1D2025] flex items-center gap-2 py-1 px-2 rounded-full  w-64">
-          <FiSearch className="text-[#E0E0E0] text-sm font-semibold" />
+          <FiSearch className="text-[#E0E0E0] text-sm font-semibold " />
           <input
             type="text"
-            className="bg-inherit placeholder:text-[#9E9E9E] text-sm font-semibold"
+            className="bg-inherit placeholder:text-[#9E9E9E] text-sm font-semibold outline-none "
             placeholder="Search for an assets..."
           />
         </div>

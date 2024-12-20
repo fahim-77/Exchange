@@ -33,7 +33,7 @@ export default function Archive() {
             <div>Rating</div>
             <div>Networks</div>
           </div>
-          {fetchCoin.length > 0 &&
+          {fetchCoin &&
             fetchCoin.map((coin, index) => (
               <CoinList
                 key={coin.id}
@@ -45,7 +45,12 @@ export default function Archive() {
               />
             ))}
         </div>
-        <CoinFooter page={page} setPage={setPage} setPerPage={setPerPage} />
+        <CoinFooter
+          page={page}
+          setPage={setPage}
+          perPage={perPage}
+          setPerPage={setPerPage}
+        />
       </div>
     </>
   );

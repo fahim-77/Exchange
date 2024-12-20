@@ -4,15 +4,15 @@ import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
 import { fetchData } from "../Utils/httpRequest";
 
-export default function CoinFooter({ page, setPage, setPerPage }) {
+export default function CoinFooter({ page, setPage, perPage, setPerPage }) {
   const [endPage, setEndPage] = useState(1);
   useEffect(() => {
     const fetch = async () => {
-      const data = await fetchData("coins/markets?vs_currency=usd&per_page=8");
-      setEndPage(Math.ceil(data.length / 8));
+      const data = await fetchData("coins/markets?vs_currency=usd");
+      setEndPage(Math.ceil(data.length / perPage));
     };
     fetch();
-  }, []);
+  }, [perPage]);
   const clickHandler = (e) => {
     setPerPage(e.target.value);
   };
@@ -38,8 +38,14 @@ export default function CoinFooter({ page, setPage, setPerPage }) {
         <p>
           {page} of {endPage}
         </p>
-        <FaAngleLeft onClick={() => page > 1 && setPage((prev) => prev - 1)} />
-        <FaAngleRight onClick={() => setPage((prev) => prev + 1)} />
+        <FaAngleLeft
+          onClick={() => page > 1 && setPage((prev) => prev - 1)}
+          className={page === 1 && "text-slate-500"}
+        />
+        <FaAngleRight
+          onClick={() => page < endPage && setPage((prev) => prev + 1)}
+          className={page >= endPage && "text-slate-500"}
+        />
       </div>
     </div>
   );

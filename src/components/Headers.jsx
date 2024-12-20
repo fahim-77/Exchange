@@ -23,7 +23,7 @@ export default function Headers() {
           <FiSearch className="text-white" />
           <input
             type="text"
-            className="bg-inherit placeholder:text-[#9E9E9E] text-sm font-semibold"
+            className="bg-inherit placeholder:text-[#9E9E9E] text-sm font-semibold outline-none"
             placeholder="Search for an assets..."
           />
         </div>
